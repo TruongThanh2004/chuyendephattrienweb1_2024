@@ -1,0 +1,147 @@
+@orange-color: #ee480d;
+@orange-color1: #f56a39;
+@border-color:#f56d3e;
+@white-color: #ffffff;
+@font-color: @white-color;
+@black-color:#000000;
+
+body {
+   
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.repair-steps {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    background-color: @orange-color;
+    color: @font-color;
+    padding: 40px;
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    background-image: linear-gradient(rgb(238, 72, 13,0.98), rgb(238, 72, 13,0.98)), url('../img/bg024.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    hr{
+        
+        width: 50px;
+        margin-left: 0 ;
+    }
+    .step-intro {
+        width: 23%; 
+        margin-bottom: 40px; 
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .steps {
+        width: 65%;
+        display: flex;
+        flex-direction: row; 
+        gap: 150px; 
+        flex-wrap: wrap; 
+        .step {
+            text-align: center;
+            position:relative; 
+            opacity: 0;                      
+            animation-duration: 1.5s;
+            animation-name: fadeIn ;
+            animation-fill-mode: forwards; 
+            animation-iteration-count: 1;
+          
+            .step-circle {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;               
+                background-color: fade(@orange-color1, 75%);
+                color:  @white-color;
+                font-size: 24px;
+                line-height: 35px;
+                margin: 20px auto 20px 10px;
+                position: absolute;
+            }
+            .fa-3x{
+                width: 140px;
+                height: 140px;
+                border: 5px solid @border-color;
+                border-radius: 50%;
+                background-color: @white-color;
+                color:@black-color;
+                font-size: 35px;
+                line-height: 140px;
+                margin: 0 auto 20px;
+                
+            }
+
+            i {
+                color: @white-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+        .step::before{
+            content: '';
+            display: block;
+            background: url(../img/step-arrow.png) no-repeat center center;
+            position: absolute;
+            width: 175px;
+            height: 36px;
+            top: 62px;
+            left: 160px; 
+            
+        }
+        .step:last-child::before {
+          display: none;
+        }
+    }
+}
+
+.step:nth-child(1){   
+    animation-delay: 0.1s;   
+}
+.step:nth-child(2){
+    animation-delay: 0.4s;
+}
+.step:nth-child(3){
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; 
+        
+    }
+    100%{
+        opacity: 1; 
+        
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
